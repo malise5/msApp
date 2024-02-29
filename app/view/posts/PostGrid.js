@@ -4,6 +4,11 @@ Ext.define("MsTraining.view.posts.PostGrid", {
   store: {
     type: "posts",
   },
+  tbar: [
+    {
+      text: "Add Post",
+    },
+  ],
   columns: [
     { dataIndex: "id", text: "ID" },
     { dataIndex: "title", text: "Title", flex: 1 },
