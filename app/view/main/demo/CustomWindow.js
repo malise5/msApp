@@ -1,4 +1,4 @@
-// Ext.define("MyApp.view.demo.CustomWindow", {
+// Ext.define("MsTraining.view.demo.CustomWindow", {
 //   extend: "Ext.window.Window",
 //   title: "My Title",
 //   height: 200,
@@ -10,5 +10,5 @@
 //   modal: true,
 // });
 // Ext.onReady(function () {
-//   Ext.create("MyApp.view.demo.CustomWindow");
+//   Ext.create("MsTraining.view.demo.CustomWindow");
 // });
