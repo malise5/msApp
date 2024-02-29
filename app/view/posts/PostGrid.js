@@ -1,12 +1,16 @@
 Ext.define("MsTraining.view.posts.PostGrid", {
   extend: "Ext.grid.Panel",
   xtype: "postgrid",
+  controller: "postgridviewcontroller",
   store: {
     type: "posts",
   },
   tbar: [
     {
       text: "Add Post",
+      listeners: {
+        click: "onAddPostClicked",
+      },
     },
   ],
   columns: [
