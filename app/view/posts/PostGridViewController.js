@@ -14,4 +14,10 @@ Ext.define("MsTraining.view.posts.PostGridViewController", {
     });
     wd.show();
   },
+  onFormFieldsClicked: function (btn, e, eOpts) {
+    var wd = Ext.create({
+      xtype: "formfieldsdemo",
+    });
+    wd.show();
+  },
 });

@@ -6,6 +6,7 @@ Ext.define("MsTraining.view.posts.PostFormWindow", {
   height: 250,
   width: 520,
   bodyPadding: 10,
+  modelValidation: true,
   closable: true,
   modal: true,
   items: [
