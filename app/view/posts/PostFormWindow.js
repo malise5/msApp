@@ -1,21 +1,25 @@
 Ext.define("MsTraining.view.posts.PostFormWindow", {
   extend: "Ext.window.Window",
   xtype: "postformwindow",
+  controller: "postformwindowcontroller",
   title: "Add Post",
   height: 250,
   width: 520,
-  style: {
-    margin: "20px", // Adjust the margin as needed
-  },
+  bodyPadding: 10,
   closable: true,
   modal: true,
   items: [
     {
       xtype: "form",
+      reference: "postform",
+      itemId: "postform",
+      jsonSubmit: true,
       items: [
         {
-          allowBlank: false,
+          allowBlank: true,
+          readOnly: true,
           xtype: "textfield",
+          reference: "postId",
           fieldLabel: "Post ID",
           name: "id",
           emptyText: "Post id",
@@ -36,20 +40,22 @@ Ext.define("MsTraining.view.posts.PostFormWindow", {
         },
         {
           allowBlank: false,
-          xtype: "datefield",
-          fieldLabel: "Published Date",
-          name: "date",
-          emptyText: "date",
+          xtype: "textareafield",
+          fieldLabel: "Body",
+          name: "body",
+          emptyText: "body",
         },
       ],
     },
   ],
   buttons: [
     {
-      text: "Cancel",
+      text: "Clear",
+      handler: "onClearClick",
     },
     {
       text: "Save",
+      handler: "onSaveClick",
     },
   ],
 });
