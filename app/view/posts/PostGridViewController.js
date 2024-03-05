@@ -20,4 +20,10 @@ Ext.define("MsTraining.view.posts.PostGridViewController", {
     });
     wd.show();
   },
+  onLayoutsClicked: function (btn, e, eOpts) {
+    var wd = Ext.create({
+      xtype: "borderlayout",
+    });
+    wd.show();
+  },
 });
