@@ -22,7 +22,7 @@ Ext.define("MsTraining.view.posts.PostGridViewController", {
   },
   onLayoutsClicked: function (btn, e, eOpts) {
     var wd = Ext.create({
-      xtype: "borderlayout",
+      xtype: "checkoutform",
     });
     wd.show();
   },

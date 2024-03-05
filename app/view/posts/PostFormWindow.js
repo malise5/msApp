@@ -15,6 +15,7 @@ Ext.define("MsTraining.view.posts.PostFormWindow", {
       reference: "postform",
       itemId: "postform",
       jsonSubmit: true,
+      layout: "form",
       items: [
         {
           allowBlank: true,
