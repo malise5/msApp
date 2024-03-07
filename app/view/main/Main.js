@@ -88,12 +88,20 @@ Ext.define("MsTraining.view.main.Main", {
     {
       title: "Posts",
       iconCls: "fa-user",
-      items: [{ xtype: "postgrid" }],
+      items: [
+        // {
+        //   xtype: "postgrid",
+        // },
+      ],
     },
     {
       title: "Todos",
       iconCls: "fa-user",
-      items: [{ xtype: "todogrid" }],
+      items: [
+        // {
+        //   xtype: "todogrid",
+        // },
+      ],
     },
     {
       title: "Albums",
@@ -101,11 +109,13 @@ Ext.define("MsTraining.view.main.Main", {
       items: [{ xtype: "albumgrid" }],
     },
     {
-      title: "Groups",
+      title: "Static Data Management",
       iconCls: "fa-users",
-      bind: {
-        html: "{loremIpsum}",
-      },
+      items: [
+        {
+          xtype: "parentpanel",
+        },
+      ],
     },
     {
       title: "Settings",

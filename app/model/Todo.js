@@ -1,19 +1,15 @@
 Ext.define("MsTraining.model.Todo", {
   extend: "Ext.data.Model",
-
-  idProperty: "id",
-  fileds: ["id", "userId", "title", "completed"],
+  idProperty: "_id",
+  fields: ["_id", "title", "completed", "userId"],
 
   proxy: {
-    type: "ajax", //rest, ajax
-    url: "https://jsonplaceholder.typicode.com/todos",
+    type: "rest", //rest, ajax
+    url: "http://localhost:3000/todos",
     reader: {
       type: "json",
-      // rootProperty: "",
+      rootProperty: "rows",
+      totalproperty: "totalCount",
     },
   },
 });
-// "userId": 1,
-// "id": 1,
-// "title": "delectus aut autem",
-// "completed": false

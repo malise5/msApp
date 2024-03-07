@@ -3,11 +3,4 @@ Ext.define("MsTraining.store.Todos", {
   alias: "store.todos",
   model: "MsTraining.model.Todo",
   requires: "MsTraining.model.Todo",
-  autoLoad: true,
-  sorters: ["id", "userId"],
 });
-
-// "userId": 1,
-// "id": 1,
-// "title": "delectus aut autem",
-// "completed": false
