@@ -18,7 +18,7 @@ Ext.define("MsTraining.view.posts.PostFormWindowController", {
       //send ajax request to submit post
       form.submit({
         method: "POST",
-        url: "https://jsonplaceholder.typicode.com/posts",
+        url: "http://localhost:3000/posts",
         success: function (form, action) {
           //add the record to the posts server
           Ext.Msg.alert("Success", action.result.msg);

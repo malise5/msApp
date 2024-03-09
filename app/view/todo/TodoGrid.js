@@ -23,9 +23,9 @@ Ext.define("MsTraining.view.posts.TodoGrid", {
     {
       text: "View Todo",
       handler: "onViewTodo",
-      // bind: {
-      //   disabled: "{!todogrid.selection}",
-      // },
+      bind: {
+        disabled: "{!todogrid.selection}",
+      },
     },
   ],
 });
