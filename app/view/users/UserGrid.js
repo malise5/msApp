@@ -1,6 +1,7 @@
 Ext.define("MsTraining.view.users.UserGrid", {
   extend: "Ext.grid.GridPanel",
   xtype: "usergrid",
+  reference: "usergrid",
   controller: "usergridcontroller",
   title: "Users",
 
@@ -9,7 +10,22 @@ Ext.define("MsTraining.view.users.UserGrid", {
   },
   layout: "fit",
   height: 1200,
+  plugins: {
+    cellediting: {
+      clicksToEdit: 1,
+    },
+  },
+  selModel: {
+    selType: "cellboxmodel",
+    // mode: "MULTI",
+  },
+  selModel: {
+    selType: "checkboxmodel",
+    // mode: "MULTI",
+  },
+
   columns: [
+    { xtype: "rownumberer" },
     {
       dataIndex: "_id",
       text: "ID",
@@ -19,16 +35,25 @@ Ext.define("MsTraining.view.users.UserGrid", {
       dataIndex: "name",
       text: "Name",
       flex: 1,
+      editor: "textfield",
     },
     {
       dataIndex: "username",
       text: "Username",
       flex: 1,
+      editor: "textfield",
     },
     {
       dataIndex: "email",
       text: "Email",
-      flex: 1,
+      flex: 3,
+      renderer: function (value) {
+        return Ext.String.format('<a href="mailto:{0}">{1}</a>', value, value);
+      },
+      editor: {
+        xtype: "textfield",
+        allowBlank: false,
+      },
     },
     {
       dataIndex: "street",
@@ -55,23 +80,32 @@ Ext.define("MsTraining.view.users.UserGrid", {
     {
       text: "Add User",
     },
-    "->",
+    {
+      text: "Model Binding",
+      handler: "onModelBinding",
+    },
+    // "->",
+    {
+      xtype: "tbfill",
+    },
     {
       text: "Show Details",
       // toggle: true,
       // enableToggle: true,
       handler: "onShowDetails",
+      bind: {
+        disabled: "{!usergrid.selection}",
+      },
     },
   ],
-  selModel: {
-    selType: "checkboxmodel",
-    mode: "MULTI",
-  },
+
   bbar: {
     xtype: "pagingtoolbar",
     displayInfo: true,
   },
   listeners: {
     cellclick: "onUserGridCellClick",
+    celldblclick: "onUserGridCellDblClick",
+    cellcontextmenu: "onUserGridCellContextMenu",
   },
 });

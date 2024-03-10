@@ -95,12 +95,12 @@ Ext.define("MsTraining.view.main.Main", {
       ],
     },
     {
-      title: "Posts",
+      title: "Employees",
       iconCls: "fa-user",
       items: [
-        // {
-        //   xtype: "postgrid",
-        // },
+        {
+          xtype: "employeeGrid",
+        },
       ],
     },
     {
