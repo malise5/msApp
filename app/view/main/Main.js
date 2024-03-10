@@ -104,6 +104,15 @@ Ext.define("MsTraining.view.main.Main", {
       ],
     },
     {
+      title: "Summary",
+      iconCls: "fa-user",
+      items: [
+        {
+          xtype: "summaryTestGrid",
+        },
+      ],
+    },
+    {
       title: "Todos",
       iconCls: "fa-user",
       items: [
