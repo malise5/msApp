@@ -9,7 +9,7 @@ Ext.define("MsTraining.view.users.UserGrid", {
     type: "users",
   },
   layout: "fit",
-  height: 1200,
+  height: 800,
   plugins: {
     cellediting: {
       clicksToEdit: 1,

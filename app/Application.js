@@ -36,10 +36,10 @@ Ext.define("MsTraining.Application", {
     // Create and display the appropriate view based on the user's login status
     // If the user is logged in, display the main application view ("app-main")
     // If not logged in, display the login view
-    // Ext.widget(loggedIn ? "app-main" : "login");
+    Ext.widget(loggedIn ? "app-main" : "login");
 
-    Ext.create({
-      xtype: loggedIn ? "app-main" : "login",
-    });
+    // Ext.create({
+    //   xtype: loggedIn ? "app-main" : "login",
+    // });
   },
 });

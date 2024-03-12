@@ -36,20 +36,7 @@ Ext.define("MsTraining.view.main.Main", {
       // Positioning the tabpanel to the center of the layout
       region: "center",
       // Using a tabpanel to display multiple tabs
-      xtype: "tabpanel",
-      items: [
-        {
-          title: "Home",
-        },
-        {
-          title: "Bar",
-          closable: true,
-          tabConfig: {
-            title: "Custom Title",
-            tooltip: "A button tooltip",
-          },
-        },
-      ],
+      xtype: "mainpanel",
     },
     {
       region: "south", // Positioning the footer component to the south side of the layout

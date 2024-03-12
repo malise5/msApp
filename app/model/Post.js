@@ -6,8 +6,8 @@ Ext.define("MsTraining.model.Post", {
 
   proxy: {
     type: "ajax", //rest, ajax
-    url: "https://jsonplaceholder.typicode.com/posts",
-    // url: "http://localhost:3000/posts",
+    // url: "https://jsonplaceholder.typicode.com/posts",
+    url: "http://localhost:3000/posts",
     reader: {
       type: "json",
       rootProperty: "rows",
