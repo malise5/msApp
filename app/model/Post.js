@@ -13,5 +13,6 @@ Ext.define("MsTraining.model.Post", {
       rootProperty: "rows",
       totalProperty: "totalCount",
     },
+    autoLoad: true, // Set autoLoad to true to automatically load data upon creation
   },
 });
