@@ -21,6 +21,12 @@ Ext.define("MsTraining.view.posts.PostGridViewController", {
     });
     wd.show();
   },
+  onVTypesClicked: function (btn, e, eOpts) {
+    var wd = Ext.create({
+      xtype: "formfieldvtypevalidation",
+    });
+    wd.show();
+  },
   onLayoutsClicked: function (btn, e, eOpts) {
     var wd = Ext.create({
       xtype: "checkoutform",
