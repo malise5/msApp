@@ -1,146 +1,63 @@
 /**
- * This class is the main view for the application. It is specified in app.js as the
- * "mainView" property. That setting automatically applies the "viewport"
- * plugin causing this view to become the body element (i.e., the viewport).
+ * This class defines the main view for the application. It serves as the primary interface
+ * specified in app.js under the "mainView" property. This setting automatically applies the "viewport"
+ * plugin, making this view the body element (i.e., the viewport).
  *
- * TODO - Replace this content of this view to suite the needs of your application.
+ * TODO - Customize this view according to the requirements of your application.
  */
 Ext.define("MsTraining.view.main.Main", {
-  extend: "Ext.tab.Panel",
+  extend: "Ext.container.Container",
   xtype: "app-main",
 
   requires: [
-    "Ext.plugin.Viewport",
     "Ext.window.MessageBox",
-
     "MsTraining.view.main.MainController",
     "MsTraining.view.main.MainModel",
-    "MsTraining.view.main.List",
   ],
 
-  controller: "main",
-  viewModel: "main",
-
-  ui: "navigation",
-
-  tabBarHeaderPosition: 1,
-  titleRotation: 0,
-  tabRotation: 0,
-
-  header: {
-    layout: {
-      align: "stretchmax",
-    },
-    title: {
-      bind: {
-        text: "{name}",
-      },
-      flex: 0,
-    },
-    iconCls: "fa-th-list",
-  },
-
-  tabBar: {
-    flex: 1,
-    layout: {
-      align: "stretch",
-      overflowHandler: "none",
-    },
-  },
-
-  responsiveConfig: {
-    tall: {
-      headerPosition: "top",
-    },
-    wide: {
-      headerPosition: "left",
-    },
-  },
-
-  defaults: {
-    bodyPadding: 20,
-    tabConfig: {
-      responsiveConfig: {
-        wide: {
-          iconAlign: "left",
-          textAlign: "left",
-        },
-        tall: {
-          iconAlign: "top",
-          textAlign: "center",
-          width: 120,
-        },
-      },
-    },
+  plugins: "viewport", // Plugin to automatically set this container as the viewport
+  controller: "main", // Controller handling this view
+  viewModel: "main", // ViewModel associated with this view
+  layout: {
+    type: "border", // Using border layout for this container
   },
 
   items: [
     {
-      title: "Static Data Management",
-      iconCls: "fa-users",
-      items: [
-        {
-          xtype: "parentpanel",
-        },
-      ],
-    },
-    {
-      title: "Home",
-      iconCls: "fa-home",
-      // The following grid shares a store with the classic version's grid as well!
-      items: [
-        {
-          xtype: "mainlist",
-        },
-      ],
-    },
-    {
-      title: "Employees",
-      iconCls: "fa-user",
-      items: [
-        {
-          xtype: "employeeGrid",
-        },
-      ],
-    },
-    {
-      title: "Summary",
-      iconCls: "fa-user",
-      items: [
-        {
-          xtype: "summaryTestGrid",
-        },
-      ],
-    },
-    {
-      title: "Todos",
-      iconCls: "fa-user",
-      items: [
-        // {
-        //   xtype: "todogrid",
-        // },
-      ],
-    },
-    {
-      title: "Albums",
-      iconCls: "fa-user",
-      items: [{ xtype: "albumgrid" }],
-    },
-    {
-      title: "Static Data Management",
-      iconCls: "fa-users",
-      items: [
-        {
-          xtype: "parentpanel",
-        },
-      ],
-    },
-    {
-      title: "Settings",
-      iconCls: "fa-cog",
+      xtype: "mainmenu",
       bind: {
-        html: "{loremIpsum}",
+        title: "{name}", // Binding title to a dynamic value from the associated ViewModel
       },
+      region: "west", // Positioning this panel to the west side of the layout
+      width: 250,
+      split: true, // Enabling splitter to resize this panel
+    },
+    {
+      // Positioning the tabpanel to the center of the layout
+      region: "center",
+      // Using a tabpanel to display multiple tabs
+      xtype: "tabpanel",
+      items: [
+        {
+          title: "Home",
+        },
+        {
+          title: "Bar",
+          closable: true,
+          tabConfig: {
+            title: "Custom Title",
+            tooltip: "A button tooltip",
+          },
+        },
+      ],
+    },
+    {
+      region: "south", // Positioning the footer component to the south side of the layout
+      xtype: "appfooter", // Custom footer component
+    },
+    {
+      region: "north", // Positioning the header component to the north side of the layout
+      xtype: "appheader", // Custom header component
     },
   ],
 });
