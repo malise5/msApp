@@ -48,10 +48,10 @@ Ext.define("MsTraining.view.posts.PostGrid", {
     },
   ],
   columns: [
-    { dataIndex: "_id", text: "ID" },
+    { dataIndex: "_id", text: "ID", flex: 1 },
     { dataIndex: "title", text: "Title", flex: 1 },
-    { dataIndex: "body", text: "Body", flex: 2, sortable: false },
-    { dataIndex: "userId", text: "User ID", sortable: false },
+    { dataIndex: "body", text: "Body", flex: 1, sortable: false },
+    { dataIndex: "userId", text: "User ID", flex: 1, sortable: false },
   ],
   selModel: {
     selType: "checkboxmodel",

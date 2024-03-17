@@ -7,8 +7,8 @@ Ext.define("MsTraining.view.layouts.CheckoutForm", {
   height: 600,
   width: 1000, // Adjusted width to fit the layout
   autoShow: true,
-  closable: true,
-  modal: true,
+  // closable: true,
+  // modal: true,
 
   // Panel configuration
   layout: "fit", // Use fit layout to ensure the border layout fills the window
@@ -38,7 +38,7 @@ Ext.define("MsTraining.view.layouts.CheckoutForm", {
                     {
                       xtype: "textfield",
                       emptyText: "First",
-                      flex: 1,
+                      // flex: 1,
                     },
                     {
                       xtype: "splitter",
@@ -60,7 +60,7 @@ Ext.define("MsTraining.view.layouts.CheckoutForm", {
                       fieldLabel: "Email Address",
                       name: "email",
                       vtype: "email",
-                      flex: 1,
+                      // flex: 1,
                       allowBlank: false,
                     },
                     {

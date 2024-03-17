@@ -21,16 +21,34 @@ Ext.define("MsTraining.store.Menu", {
             className: "usergrid", // CSS class for user grid component
             leaf: true, // Indicates this node is a leaf node (i.e., it has no children)
           },
+          // {
+          //   text: "Todos", // Child node for todo items
+          //   iconCls: "fas fa-user-secret", // Icon class for todos node
+          //   className: "todogrid", // CSS class for todo grid component
+          //   leaf: true, // Indicates this node is a leaf node
+          // },
           {
-            text: "Todos", // Child node for todo items
+            text: "Check Out Form", // Child node for todo items
             iconCls: "fas fa-user-secret", // Icon class for todos node
-            className: "todogrid", // CSS class for todo grid component
+            className: "checkoutform", // CSS class for todo grid component
             leaf: true, // Indicates this node is a leaf node
           },
         ],
       },
       {
-        text: "Static Data", // Node for static data items
+        text: "Accounting Data", // Node for static data items
+        iconCls: "fa fa-database fa-lg", // Icon class for static data node
+        children: [
+          {
+            text: "Trial Balance", // Child node for posts
+            iconCls: "fa fa-dollar-sign", // Icon class for posts node
+            className: "trialbalancegrid", // CSS class for post grid component
+            leaf: true, // Indicates this node is a leaf node
+          },
+        ],
+      },
+      {
+        text: "Department Data", // Node for static data items
         iconCls: "fa fa-database fa-lg", // Icon class for static data node
         children: [
           {
@@ -40,10 +58,16 @@ Ext.define("MsTraining.store.Menu", {
             leaf: true, // Indicates this node is a leaf node
           },
           {
-            text: "Personnel", // Child node for personnel data
+            text: "Employee", // Child node for personnel data
             iconCls: "fa fa-users", // Icon class for personnel node
             leaf: true, // Indicates this node is a leaf node
-            className: "mainlist", // CSS class for main list component
+            className: "employeeGrid", // CSS class for main list component
+          },
+          {
+            text: "Students", // Child node for personnel data
+            iconCls: "fa fa-users", // Icon class for personnel node
+            leaf: true, // Indicates this node is a leaf node
+            className: "summaryTestGrid", // CSS class for main list component
           },
         ],
       },
