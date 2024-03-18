@@ -6,39 +6,6 @@ Ext.define("MsTraining.view.users.UserGridController", {
     let store = grid.getStore();
     store.load();
   },
-  // onUserGridCellClick: function (
-  //   grid,
-  //   td,
-  //   cellIndex,
-  //   record,
-  //   tr,
-  //   rowIndex,
-  //   e,
-  //   eOpts
-  // ) {
-  //   // console.log();
-  //   let postStore = Ext.ComponentQuery.query("postgrid")[0].getStore();
-  //   let todosStore = Ext.ComponentQuery.query("todogrid")[0].getStore();
-  //   console.log(todosStore);
-
-  //   postStore.reload({
-  //     params: {
-  //       userId: record.get("_id"),
-  //     },
-  //   });
-  //   ptodosStore.reload({
-  //     params: {
-  //       userId: record.get("_id"),
-  //     },
-  //   });
-
-  //   let me = this,
-  //     view = me.getView(),
-  //     vm = me.getViewModel,
-  //     refs = me.getReferences();
-
-  //   vm.set("record", record);
-  // },
 
   onShowDetails: function (btn, e, eOpts) {
     let userGrid = this.getView();
@@ -81,4 +48,13 @@ Ext.define("MsTraining.view.users.UserGridController", {
     e,
     eOpts
   ) {},
+  onSelectUser: function (grid, record, index, eOpts) {
+    let me = this,
+      view = me.getView(),
+      vm = me.getViewModel,
+      refs = me.getReferences();
+    let record = grid.getSTore().findRecord("_id", id);
+    vm.set("record", record);
+    grid.getSelectionModel().select(record);
+  },
 });
