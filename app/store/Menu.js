@@ -18,7 +18,7 @@ Ext.define("MsTraining.store.Menu", {
           {
             text: "Users", // Child node for user management
             iconCls: "fa fa-users", // Icon class for users node
-            className: "usergrid", // CSS class for user grid component
+            className: "users", // CSS class for user grid component
             leaf: true, // Indicates this node is a leaf node (i.e., it has no children)
           },
           // {

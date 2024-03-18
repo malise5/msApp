@@ -3,7 +3,7 @@ Ext.define("MsTraining.view.users.UserGrid", {
   xtype: "usergrid",
   reference: "usergrid",
   controller: "usergridcontroller",
-  title: "Users",
+  // title: "Users",
   requires: ["MsTraining.util.Util"],
 
   store: {
@@ -75,25 +75,6 @@ Ext.define("MsTraining.view.users.UserGrid", {
       dataIndex: "zipcode",
       text: "Zipcode",
       flex: 1,
-    },
-    {
-      dataIndex: "price",
-      text: "Price",
-      flex: 1,
-      renderer: function (value) {
-        // Check if the value is positive or negative
-        if (value >= 0) {
-          // Format positive price with green color
-          return `<div style="color:green">${Ext.util.Format.usMoney(
-            value
-          )}</div>`;
-        } else {
-          // Format negative price with red color
-          return `<div style="color:red">${Ext.util.Format.usMoney(
-            value
-          )}</div>`;
-        }
-      },
     },
   ],
   tbar: [
