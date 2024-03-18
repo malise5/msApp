@@ -10,5 +10,15 @@ Ext.define("MsTraining.model.User", {
     "suite",
     "city",
     "zipcode",
+    "price",
   ],
+  proxy: {
+    type: "rest",
+    url: "resources/users.json",
+    reader: {
+      type: "json",
+      rootProperty: "rows",
+      totalProperty: "totalCount", // Corrected property name
+    },
+  },
 });

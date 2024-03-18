@@ -1,29 +1,54 @@
-Ext.define("MsTraining.view.users.UserGrid", {
-  extend: "Ext.grid.GridPanel",
-  xtype: "usergrid",
-  reference: "usergrid",
-  controller: "usergridcontroller",
-  title: "Users",
+Ext.define("MsTraining.view.review.ReviewGrid", {
+  extend: "Ext.grid.Panel",
+  xtype: "reviewgrid",
   requires: ["MsTraining.util.Util"],
-
   store: {
     type: "users",
   },
-  layout: "fit",
-  height: 800,
-  plugins: {
-    cellediting: {
-      clicksToEdit: 1,
+  // layout: "fit",
+  // height: 800,
+  // plugins: {
+  //   cellediting: {
+  //     clicksToEdit: 1,
+  //   },
+  // },
+  tbar: [
+    {
+      text: "Operations",
+      menu: [
+        {
+          text: "Add new User",
+          handler: function () {},
+        },
+        {
+          text: "Add new User",
+        },
+        {
+          text: "Add new User",
+          menu: [
+            {
+              text: "Nested Sub Menu",
+            },
+          ],
+        },
+      ],
     },
-  },
-  selModel: {
-    selType: "cellboxmodel",
-    // mode: "MULTI",
-  },
-  selModel: {
-    selType: "checkboxmodel",
-    // mode: "MULTI",
-  },
+    {
+      fieldLabel: "Search",
+      xtype: "textfield",
+      listeners: {
+        change: "onSearchKeyValueChange",
+      },
+    },
+    {
+      xtype: "datefield",
+      emptyText: "startDate",
+    },
+    {
+      xtype: "datefield",
+      emptyText: "startDate",
+    },
+  ],
 
   columns: [
     { xtype: "rownumberer" },
@@ -96,28 +121,28 @@ Ext.define("MsTraining.view.users.UserGrid", {
       },
     },
   ],
-  tbar: [
-    {
-      text: "Add User",
-    },
-    {
-      text: "Model Binding",
-      handler: "onModelBinding",
-    },
-    // "->",
-    {
-      xtype: "tbfill",
-    },
-    {
-      text: "Show Details",
-      // toggle: true,
-      // enableToggle: true,
-      handler: "onShowDetails",
-      bind: {
-        disabled: "{!usergrid.selection}",
-      },
-    },
-  ],
+  // tbar: [
+  //   {
+  //     text: "Add User",
+  //   },
+  //   {
+  //     text: "Model Binding",
+  //     handler: "onModelBinding",
+  //   },
+  //   // "->",
+  //   {
+  //     xtype: "tbfill",
+  //   },
+  //   {
+  //     text: "Show Details",
+  //     // toggle: true,
+  //     // enableToggle: true,
+  //     handler: "onShowDetails",
+  //     bind: {
+  //       disabled: "{!usergrid.selection}",
+  //     },
+  //   },
+  // ],
 
   bbar: {
     xtype: "pagingtoolbar",
@@ -129,3 +154,14 @@ Ext.define("MsTraining.view.users.UserGrid", {
     cellcontextmenu: "onUserGridCellContextMenu",
   },
 });
+
+// store: {
+//   type: "users",
+// },
+// bind: "{users}",
+// columns: [
+//   { dataIndex: "_id", text: "ID", flex: 1 },
+//   { dataIndex: "title", text: "Title", flex: 1 },
+//   { dataIndex: "body", text: "Body", flex: 1, sortable: false },
+//   { dataIndex: "userId", text: "User ID", flex: 1, sortable: false },
+// ],

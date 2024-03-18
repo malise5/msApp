@@ -2,6 +2,9 @@ Ext.define("MsTraining.view.posts.PostGridViewController", {
   extend: "Ext.app.ViewController",
   alias: "controller.postgridviewcontroller",
   mixins: ["MsTraining.mixin.GridMixin"],
+  init: function () {
+    Ext.getStore("users").load();
+  },
   onAddPostClicked: function (btn, e, eOpts) {
     console.log(btn.getText() + " was clicked");
     //new window pop up
@@ -97,5 +100,54 @@ Ext.define("MsTraining.view.posts.PostGridViewController", {
         }
       );
     }
+  },
+  onSearchKeyValueChange: function (view, newValue, oldValue, eOpts) {
+    let me = this,
+      v = me.getView(),
+      vm = me.getViewModel(),
+      refs = me.getReferences();
+
+    let store = vm.getStore();
+
+    store.reload({
+      params: {
+        userId: newValue,
+      },
+    });
+
+    // console.log(store);
+    // if (newValue === "") {
+    //   store.reload();
+    // } else {
+    //   store.reload({
+    //     params: {
+    //       userId: newValue,
+    //     },
+    //   });
+    // let newStore = store.filterBy((record) =>
+    //   record.get("username").includes(newValue)
+    // );
+    // vm.set("dummyUsers", newStore);
+    // }
+  },
+  onUserSelectionChange: function (combo, newValue, oldValue, eOpts) {
+    this.filterPosts(newValue);
+  },
+  onUserSelected: function (combo, record, eOpts) {
+    this.filterPosts(combo.getValue());
+  },
+  filterPosts: function () {
+    let me = this,
+      v = me.getView(),
+      vm = me.getViewModel(),
+      refs = me.getReferences();
+
+    let store = vm.getStore();
+
+    store.reload({
+      params: {
+        userId: newValue,
+      },
+    });
   },
 });

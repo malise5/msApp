@@ -8,7 +8,35 @@ Ext.define("MsTraining.view.posts.PostGrid", {
   },
   tbar: [
     {
+      overflowHandler: "menu",
+      items: [],
+    },
+    {
+      fieldLabel: "Search",
+      xtype: "textfield",
+      listeners: {
+        change: "onSearchKeyValueChange",
+      },
+    },
+    // {
+    //   xtype: "datefield",
+    //   emptyText: "startDate",
+    // },
+    // {
+    //   xtype: "datefield",
+    //   emptyText: "startDate",
+    // },
+    {
       text: "Add Post",
+      xtype: "button",
+      iconCls: "fas fa-plus",
+      listeners: {
+        click: "onAddPostClicked",
+      },
+    },
+    {
+      text: "Add Post",
+      xtype: "button",
       iconCls: "fas fa-plus",
       listeners: {
         click: "onAddPostClicked",
@@ -44,6 +72,20 @@ Ext.define("MsTraining.view.posts.PostGrid", {
       text: "Layouts",
       listeners: {
         click: "onLayoutsClicked",
+      },
+    },
+    {
+      fieldLabel: "Choose State",
+      xtype: "combo",
+      store: {
+        type: "users",
+      },
+      queryMode: "local",
+      displayField: "username",
+      valueField: "_id",
+      listeners: {
+        change: "onUserSelectionChange",
+        change: "onUserSelected",
       },
     },
   ],

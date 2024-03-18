@@ -47,6 +47,7 @@ Ext.define("MsTraining.store.Menu", {
           },
         ],
       },
+
       {
         text: "Department Data", // Node for static data items
         iconCls: "fa fa-database fa-lg", // Icon class for static data node
@@ -68,6 +69,18 @@ Ext.define("MsTraining.store.Menu", {
             iconCls: "fa fa-users", // Icon class for personnel node
             leaf: true, // Indicates this node is a leaf node
             className: "summaryTestGrid", // CSS class for main list component
+          },
+        ],
+      },
+      {
+        text: "Reviews", // Node for static data items
+        iconCls: "fa fa-database fa-lg", // Icon class for static data node
+        children: [
+          {
+            text: "review Panel", // Child node for posts
+            iconCls: "fa fa-users", // Icon class for posts node
+            className: "reviewpanel", // CSS class for post grid component
+            leaf: true, // Indicates this node is a leaf node
           },
         ],
       },
